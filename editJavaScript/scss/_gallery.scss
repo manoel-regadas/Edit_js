@@ -1,0 +1,170 @@
+.gallery{
+	margin-bottom: 50px;
+	.wrapper{
+		h4{
+			@include text-2-m (0, $neu-03, 0, italic);
+			text-align: center;
+			padding: 50px 0;
+			border-top: solid 1px $neu-05;
+		}
+		.gallery_container{
+			//background-color:yellow;
+			height: 188px;
+			position: relative;
+			.gallery-wrapper{
+				@include phablet{
+					 
+				}
+				div{
+					display: inline-block;
+					width: 100%;
+					.galery-images-img{
+						cursor: pointer;
+					}
+				}
+			}
+			.gallery_btn{
+				cursor: pointer;
+				display: inline-block;
+				z-index: 1;
+				height: 188px;
+				width: 39px;
+				background-color:$neu-04;
+				position:absolute;
+				@include phablet{
+					display: none;
+				}
+			}
+			.left{
+				left: 0px;
+				
+				&:before{
+					content: '';
+					display: block;
+					width: 20px;
+					right: 12px;
+					height:3px;
+					background-color:white;
+					position:absolute;
+					bottom: 92px;
+					transform: rotate(-40deg);
+					border-radius: 1px;
+				}
+				&:after{
+					content: '';
+					display: block;
+					width: 22px;
+					height:3px;
+					background-color:white;
+					position:absolute;
+					right: 12px;
+					bottom: 79px;
+					transform: rotate(40deg);
+					border-radius: 1px;
+				}
+			}		
+			.right{
+				right:0px;
+				&:before{
+					content: '';
+					display: block;
+					width: 22px;
+					height:3px;
+					background-color:white;
+					position:absolute;
+					right: 10px;
+					bottom: 92px;
+					transform: rotate(40deg);
+					border-radius: 1px;
+				}
+				&:after{
+					content: '';
+					display: block;
+					width: 22px;
+					height:3px;
+					background-color:white;
+					position:absolute;
+					right: 10px;
+					bottom: 79px;
+					transform: rotate(-40deg);
+					border-radius: 1px;
+				}
+			}
+		}
+	}
+}
+
+.gallery-modal{
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 3;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+	
+	.gallery-modal-figure{
+		max-width: 800px;
+		max-height: 500px;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		overflow: hidden; 
+		position: relative;
+		-webkit-animation: hamburgertopToX 1s forwards;
+		animation: hamburgertopToX 0.3s forwards;
+		@-webkit-keyframes hamburgertopToX  {
+			0%{transform: scale(0)}
+			100%{transform: scale(1.0)}
+		}
+		@include phablet{
+			height: auto;
+			width: calc(100% - 50px)			
+		}
+		.gallery-modal-close{
+			display: block;
+			height: 50px;
+			width: 50px;
+			background-color: transparent;
+			position: absolute;
+			top: 9px;
+			right: 13px;
+			transition: all 0.3s ease-in-out;
+			border: 0px;
+			cursor: pointer;
+			&:hover{
+				transform: rotate(180deg);
+			}
+			&:after{
+				content: '';
+				display: block;
+				height: 60px;
+				width: 2px;
+				top: -5px;
+				position: absolute;
+				left: 24px;
+				transform: rotate(45deg);
+				background-color: $neu-07;
+			}
+			&:before{
+				content: '';
+				display: block;
+				height: 60px;
+				width: 2px;
+				top: -5px;
+				position: absolute;
+				left: 23px;
+				transform: rotate(-45deg);
+				background-color: $neu-07;
+			}
+		}
+		.gallery-modal-img{
+			width: 100%;
+					
+		}
+	}
+	
+}

@@ -1,0 +1,14 @@
+.title_1{
+	height: 250px;
+	article{
+		text-align: center;
+		@include centralizer;
+		h1{
+			@include text-1-l (bold, $neu-02,uppercase);
+		}
+		p{
+			@include text-2-m (none, $neu-03, none, italic);
+			margin-top: 10px;
+		}
+	}
+} 

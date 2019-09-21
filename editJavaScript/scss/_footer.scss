@@ -1,0 +1,107 @@
+.footer{
+	margin-top:100px; 
+	footer{
+		.wrapper{ 
+			margin-bottom: 50px;
+			font-size: 0;
+			div{
+				display: inline-block;
+				vertical-align: top;
+				width: 25%;
+				padding: 20px 0px;
+				@include phablet{
+					width: 50%;
+				}
+				@include mobile{
+					width: 100%;
+					text-align: center;
+				}
+				header{
+					@include text-1-s (bold, $neu-02, uppercase);
+					@include phablet{
+						font-size: 16px;
+					}	
+				}
+				ul{
+					li{
+						margin-top: 10px;
+						@include phablet{
+							margin-top: 16px;
+						}
+						a{
+							@include text-1-xs (none, $neu-02, none, none);
+							text-decoration: none;
+								&:hover{
+									text-decoration: underline;
+								}
+							@include phablet{
+								font-size: 14px;
+							}	
+						}
+					}
+				}
+				small{
+					@include text-1-xs (none, $neu-02, none, none);
+					display: block;
+					margin-top: 10px;
+				}	
+			}
+			.collection{
+
+			}
+			.site{
+
+			}
+			.shop{
+
+			}
+			.social{
+				ul{
+					
+				}
+				li{
+					display: inline-block;
+					margin-left: 10px;
+					&:first-child{
+						margin-left: 0px;
+					}
+					a{
+						display: block;
+						width: 32px;
+						height: 32px;
+						font-size: 0px;
+						border:solid 1px $neu-02; 
+						transition: 0.2s;
+						&:hover{
+							background-color: $neu-02;
+						}
+					}
+					.twitter{
+						background-image:url(../img/social/twitter.png);
+						background-repeat: no-repeat;
+						background-position:center;
+						&:hover{
+							background-image:url(../img/social/twitter_white.png);
+						}
+					}
+					.facebook{
+						background-image:url(../img/social/facebook.png);
+						background-repeat: no-repeat;
+						background-position:center;
+						&:hover{
+							background-image:url(../img/social/facebook_white.png);
+						}
+					}
+					.instagram{
+						background-image:url(../img/social/instagram.png);
+						background-repeat: no-repeat;
+						background-position:center;
+						&:hover{
+							background-image:url(../img/social/instagram_white.png);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.about{
+	.wrapper{ 
+		article{
+			display:inline-block;
+     		width:calc(50% - 10px);
+     		margin-bottom:100px; 
+      			&:nth-of-type(1){
+        			margin-right:20px;
+        		}
+        	@media (min-width: 0) and (max-width: 600px) {
+					width: 100%;
+					margin-top:80px;
+					&:nth-of-type(1){
+        				margin-bottom:0px;
+        			}
+				}		 
+			figure{
+				height: 580px;
+				background-color: $neu-05;
+				@media (min-width: 0) and (max-width: 1000px) {
+					height: 290px;
+				}
+
+			}
+			h3{
+				@include text-1-m (bold, $neu-02, uppercase);
+				margin-top: 30px;
+			}
+			p{
+				@include text-1-s (0, $neu-02, 0);
+				line-height: 1.7;
+				margin-top: 30px;
+				@media (min-width: 0) and (max-width: 600px){
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}	

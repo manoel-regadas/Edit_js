@@ -1,0 +1,123 @@
+.grid{
+	.wrapper_full{
+		margin-top: 100px;
+		.box_container{
+			width: 100%;
+			font-size: 0px;
+			ul{
+				width: 25%;
+				display: inline-block;
+				vertical-align: top;
+				@include phablet {
+					width: 50%; 
+				}
+				@include mobile{
+					width: 100%;
+				}
+				li{
+					position:relative;
+					height: 295px;
+					width: 100%;
+					background-color: $neu-05;
+					@include background-fix;
+					figure{
+						width: 100%;
+						position:absolute;
+						overflow: hidden;
+						img{
+							transition: all 1s;  
+							&:hover{
+								transform: scale(1.2);
+							}
+							@include phablet {
+								transform: scale(1.2);
+								&:hover{
+									transform: scale(1.2);
+								}
+							}	
+						}	
+						.big_img{
+							height:590px; 
+							@include phablet {
+								transform: scale(1.5);
+								&:hover{
+									transform: scale(1.5);
+								}
+							}
+						}	
+					}
+					article{
+						max-width: 80%;
+						margin:0 auto;
+						position:absolute;
+						@include centralizer;
+						h3{
+							@include text-1-m (400, $neu-07, uppercase);
+							line-height: 1.1;
+						}
+						p{
+							@include text-2-s (none, $neu-07, uppercase, italic);
+							margin-top: 5px;
+						}
+						.twitter{
+							display: block;
+							width: 31px;
+							height: 27px;
+							margin: 0 auto;
+							background-image:url(../img/icons/twitter.png);
+							@include background-fix;
+							position: relative;
+							&:before{
+								content: '';
+								display: inline-block;
+								width: 22px;
+								height: 1px;
+								background-color:$neu-07;
+								position:absolute;
+								right: 45px;
+								top: 50%;
+
+							}
+							&:after{
+								content: '';
+								display: inline-block;
+								width: 22px;
+								height: 1px;
+								background-color:$neu-07;
+								position:absolute;
+								left: 45px;
+								top: 50%;
+							}
+						}
+						.arrow{
+							display: block;
+							width: 27px;
+							height: 13px;
+							margin: 0 auto;
+							background-image:url(../img/icons/leftarrow.png);
+							@include background-fix;
+							margin-bottom: 16px; 
+						}
+						blockquote{
+							@include text-1-s (normal, $neu-07, none);
+							margin-top:27px;
+							cite{
+								margin-top:12px;
+								display: block;
+							}
+						}
+					}
+				}		
+				.big_box{
+					height: 590px;
+				}
+				.twitter_box{
+					background-color:$neu-04;
+				}
+				.arrow_box{
+					background-color:$neu-03;
+				}
+			}
+		}
+	}
+}

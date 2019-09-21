@@ -1,0 +1,55 @@
+.sign_up{
+	padding: 200px 0;
+	.wrapper{
+		h2{
+			@include text-1-l (bold, $neu-03, uppercase);
+			text-align: center;
+		}
+		p{
+			@include text-2-m (none, $neu-03, none, italic);
+			text-align: center;
+			margin-top: 15px;
+		}
+		.form_btn{ 
+			font-size: 0px;
+			text-align: center;
+			margin-top: 40px;
+			display: flex;
+			justify-content: center;
+			@include phablet{
+				display: block;
+			}
+			.email_form{
+				
+				.email_input{
+				    width: 475px;
+					height: 55px;
+					font-size: 22px;
+					font-style: italic;		
+					padding-left:10px;
+					@include phablet{
+					width: 80%;
+					}
+					@include mobile{
+					width: 100%;
+					}
+				}		
+			}
+			.btn{
+				@include btn(none, $color-01, $neu-07, $color-01, $button-size: l);
+				width: 90px;
+				transition: 0.2s;
+				&:hover{
+					@include animation_btn ($neu-03, $neu-07, $neu-03 )
+				}
+				@include phablet{
+					width: 80%;
+					margin-top: 25px;
+				}
+				@include mobile{
+				width: 100%;
+				}
+			}
+		}	
+	}
+}

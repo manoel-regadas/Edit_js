@@ -1,0 +1,38 @@
+.bread_crumbs{
+	.wrapper{
+		margin-top: 130px;
+		margin-bottom: 22px;
+		ul{ 
+			li{
+				display: inline-block;
+				&:after{
+					content: '';
+					display: inline-block;
+					width: 1px;
+					height: 13px;
+					background-color: $neu-03;
+					margin: 0px 10px;
+					transform: rotate(20deg);
+					position: relative;
+					top: 2px;
+				}
+				&:last-of-type{
+					font-weight: bold;
+					&:after{
+						display: none;
+					}
+			}
+				a{
+					text-decoration: none;
+					font-size: 12px;
+					font-family: $font-1;
+					color: $neu-03;
+					text-transform: uppercase;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}

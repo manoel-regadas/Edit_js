@@ -1,0 +1,178 @@
+
+
+
+///// colors /////
+
+$neu-01:#222;
+$neu-02:#303030;
+$neu-03:#606060;
+$neu-04:#bbbbbb;
+$neu-05:#e5e5e5;
+$neu-06:#f6f6f6;
+$neu-07:#fff; 
+
+$color-01:#f68236;
+
+///// font /////
+
+$font-1:'Lato', sans-serif;
+
+$font-2:'EB Garamond', serif;
+
+
+///// text /////
+
+@mixin text-1-xl ($font-weight, $color, $text-transform){
+	font-family: $font-1;
+	font-size: 72px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+@mixin text-1-l ($font-weight, $color, $text-transform){
+	font-family: $font-1;
+	font-size: 36px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+	letter-spacing: 3px;
+}
+
+@mixin text-1-m ($font-weight, $color, $text-transform){
+	font-family: $font-1;
+	font-size: 24px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+
+}
+
+@mixin text-1-s ($font-weight, $color, $text-transform){
+	font-family: $font-1;
+	font-size: 14px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform:$text-transform;
+}
+
+@mixin text-1-xs ($font-weight, $color, $text-transform, $text-style){
+	font-family: $font-1;
+	font-size: 12px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+	font-style:$text-style;
+}
+
+///////////////////
+
+@mixin text-2-m ($font-weight, $color, $text-transform, $text-style){
+	font-family: $font-2;
+	font-size: 24px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+	font-style:$text-style;
+}
+
+@mixin text-2-s ($font-weight, $color, $text-transform, $text-style){
+	font-family: $font-2;
+	font-size: 18px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+	font-style:$text-style;
+}
+
+@mixin text-2-xs ($font-weight, $color, $text-transform, $text-style){
+	font-family: $font-2;
+	font-size: 12px;
+	font-weight: $font-weight;
+	color: $color;
+	text-transform: $text-transform;
+	font-style:$text-style;
+}
+
+/////buttons
+
+@mixin btn($text-transform, $background-color, $color, $border-color, $button-size: x){
+  text-align: center;
+  display: inline-block;
+  font-size:14px;
+  font-family:$font-1; 
+  text-transform:$text-transform;
+  background-color:$background-color;
+  color:$color;
+  text-decoration: none;	
+  border:solid 1px $border-color;
+  @if $button-size == l {
+    padding:20px;
+  }
+  @if $button-size == m {
+    padding:19px;
+  }
+  @if $button-size == s{
+	padding:12px;
+  }
+}
+
+@mixin animation_btn ($background-color, $color, $border-color){
+	background-color:$background-color;
+  	color:$color;
+  	border:solid 1px $border-color;
+}
+				
+/////shortcuts
+
+@mixin centralizer{
+		text-align: center;
+		position: relative;
+		top:50%;
+		transform: translateY(-50%);
+}
+		
+/////background fix
+
+@mixin background-fix{
+	 background-size:cover; 
+	 background-repeat:no-repeat; 
+	 background-position:center;
+} 
+
+/////MQ'S
+
+
+@mixin tablet {
+
+ @media (min-width: 0) and (max-width: #{$tablet-width}) {
+
+ @content;
+
+ }
+
+}
+
+$phablet-width:768px;
+
+@mixin phablet {
+
+ @media (min-width: 0) and (max-width: 768px) {
+
+ @content;
+
+ }
+
+}
+ 
+$mobile-width:320px;
+
+@mixin mobile {
+
+ @media (min-width: 0) and (max-width: #{$mobile-width}) {
+
+ @content;
+
+ }
+
+}

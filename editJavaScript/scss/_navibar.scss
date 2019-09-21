@@ -1,0 +1,282 @@
+.navi_bar{
+	width: 100%;
+	font-size: 0px;	
+	z-index: 5;
+	position:fixed;
+	top: 0;
+	&.bg_menu{
+		background-color: rgba($color: white, $alpha: 0.95);
+		transition: all 0.2s ;
+	}
+	nav{
+		width: 95%; 
+		height: 115px;
+		margin: 0 auto;
+		border-bottom: solid 1px $neu-01;
+		display: flex;
+		align-items: center;	
+		justify-content: space-between;
+		
+		.logo{
+			a{
+				display: block;
+				width: 42px;
+				height: 42px;
+				background-image:url(../img/icons/sh_logo.png);
+				margin-right: 40px;
+				font-size: 0px;
+			}	
+		}
+		.seccoes_navi{
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			///////special MQ/////////
+			@media only screen and (max-width: 900px){ 
+				flex-direction: column;
+				background-color: white;
+				position: absolute;
+				width: 50%;
+				height: 100vh;
+				right: 0;
+				top: 0px;
+				padding-top: 115px;
+				justify-content: start;
+				transform: translateX(100%);
+				transition: transform 0.5s ease-out; 
+				&.seccoes_navi_active{
+					transform: translateX(0%);
+				}
+			}
+			
+			@media only screen and (max-width: 414px){ 
+				width: 100%;
+			}
+			
+			.navi-links{
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				width: 100%;
+				///////special MQ/////////
+				@media only screen and (max-width: 900px){ 
+					flex-direction: column;
+					height: 35%;
+				}
+				li{
+					&:last-child{
+						margin-right: 0px;
+					}
+					a{
+						text-decoration: none;
+						font-family: $font-1;
+						font-size: 12px;
+						text-transform: uppercase;
+						color: #303030;
+						&:hover{
+							font-weight: 700;
+						}
+					}	
+				}
+			}
+			.navi-utils{	
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				width: 100%;
+				///////special MQ/////////
+				@media only screen and (max-width: 900px){
+					flex-direction: column;
+					height: 50%;
+					justify-content: space-around;
+					padding-top: 45px;
+				}
+					li{	
+						margin-right: 70px;
+						&:last-child{
+							margin-right: 40px;
+						}
+						@media only screen and (max-width: 900px){
+							margin: 0;
+							&:last-child{
+								margin:0px;
+							}
+						}	
+					}
+						a{
+							text-decoration: none;
+							font-family: $font-1;
+							font-size: 14px;
+							color: #303030;
+							&:hover{
+								font-weight: 700;
+						}		
+					}
+				}
+				.login{
+					position:relative;
+					&:before{
+						content:'';
+						display: block;
+						position:absolute;
+						width: 20px;
+						height: 20px;
+						background-image:url(../img/icons/man.png);		
+						background-repeat:no-repeat;
+						background-position:bottom;	
+						top:-7px;
+						left: -23px				
+					}
+				}	
+				.kart_menu{
+					position:relative;
+					&:before{
+						content:'';
+						display: block;
+						position:absolute;
+						width: 20px;
+						height: 20px;
+						background-image:url(../img/icons/basket.png);		
+						background-repeat:no-repeat;
+						background-position:bottom;	
+						top:-7px;
+						left: -23px				
+					}	
+				}	
+				.search{	
+					margin-right: 70px;
+					cursor: pointer;
+					///////special MQ/////////
+					@media only screen and (max-width: 900px){
+						margin:0;
+					}
+					form{
+						input[type="search"]::-webkit-search-decoration,
+						input[type="search"]::-webkit-search-cancel-button,
+						input[type="search"]::-webkit-search-results-button,
+						input[type="search"]::-webkit-search-results-decoration {
+						-webkit-appearance:none;
+						}
+						.search-input{
+							font-size: 14px;
+							cursor: pointer;
+							width: 42px;
+							height:42px;
+							border: solid 1px #222222;
+							background-color: transparent;
+							background-image:url(../img/icons/search.png);
+							background-repeat: no-repeat;
+							background-position:center;
+							font-family: 'Lato', sans-serif;
+							transition: width 0.5s ease-in-out;
+							&.input_big{
+								padding: 0 20px;
+								cursor: pointer;
+								width: 150px;
+								background-image:initial;
+								background-repeat: no-repeat;
+								background-position:right;
+								background-origin: content-box;
+								font-family: 'Lato', sans-serif;
+							}
+						}
+	
+					}		
+				}	
+			}			
+		.hamburger{
+			z-index: 3;
+			display: none;
+			width: 35px;
+			height: 35px;
+			right: 0;
+			flex-direction: column;
+			justify-content: space-around;
+			
+			///////special MQ/////////
+			@media only screen and (max-width: 900px){
+				display: block;
+  				cursor: pointer;
+   				position: relative;
+			}
+			.hamburger-top{
+				width: 35px;
+				height: 4px;
+				position: absolute;
+				top:10%;
+				background-color:#222;
+				-webkit-animation: hamburgertopToBurgerTop 0.7s forwards; /* Safari 4.0 - 8.0 */
+				animation: hamburgertopToBurgerTop 0.7s forwards;
+					@-webkit-keyframes hamburgertopToBurgerTop  {
+						0%{transform: rotate(45deg);top:45%;}
+						40%{transform: rotate(0deg)}
+						60%{top:45%;}
+						100%{}
+					}
+				&.hamburger-top-toX{
+					position: absolute;
+					-webkit-animation: hamburgerTopToX 0.7s forwards; /* Safari 4.0 - 8.0 */
+					animation: hamburgerTopToX 0.7s forwards;
+					@-webkit-keyframes hamburgerTopToX  {
+						0%{}
+						40%{top:45%;}
+						60%{transform: rotate(0deg)}
+						100%{transform: rotate(45deg);top:45%;}
+					}
+				}	
+			}	
+			.hamburger-middle{
+				width: 35px;
+				height: 4px;
+				background-color:#222;
+				position: absolute;
+				top:45%;
+				-webkit-animation: hamburgerbottomToburgerMiddle 0.7s forwards; /* Safari 4.0 - 8.0 */
+					animation: hamburgerbottomToburgerMiddle 0.7s  forwards;
+					@-webkit-keyframes hamburgerbottomToburgerMiddle  {
+						0%{transform: rotate(45deg)}
+						40%{transform: rotate(0deg)}
+						60%{}
+						100%{}
+					}
+				&.hamburger-middle-toX{
+					position: absolute;
+					-webkit-animation: hamburgermiddleToX 0.7s forwards; /* Safari 4.0 - 8.0 */
+					animation: hamburgermiddleToX 0.7s  forwards;
+					@-webkit-keyframes hamburgermiddleToX  {
+						0%{}
+						40%{}
+						60%{transform: rotate(0deg)}
+						100%{transform: rotate(45deg)}
+					}
+				}
+			}
+			.hamburger-bottom{
+				width: 35px;
+				height: 4px;
+				background-color:#222;
+				position: absolute;
+				bottom:10%;
+				-webkit-animation: hamburgerbottomToburgerBottom 0.7s forwards; /* Safari 4.0 - 8.0 */
+					animation: hamburgerbottomToburgerBottom 0.7s forwards;
+					@-webkit-keyframes hamburgerbottomToburgerBottom  {
+						0%{transform: rotate(-45deg);bottom:45%;}
+						40%{transform: rotate(0deg)}
+						60%{bottom:45%;}
+						100%{}
+					}
+				&.hamburger-bottom-toX{
+					position: absolute;
+					-webkit-animation: hamburgerbottomToX 0.7s forwards; /* Safari 4.0 - 8.0 */
+					animation: hamburgerbottomToX 0.7s forwards;
+					@-webkit-keyframes hamburgerbottomToX  {
+						0%{}
+						40%{bottom:45%;}
+						60%{transform: rotate(0deg)}
+						100%{transform: rotate(-45deg);bottom:45%;}
+					}
+				}
+			}
+		}
+	}
+}

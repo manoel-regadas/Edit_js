@@ -1,0 +1,120 @@
+.protduct_details{
+	.wrapper{
+		figure{
+			margin-top: 10px;
+			width: 100%;
+			height: 600px;
+			background-color: $neu-06;
+			position: relative; 
+			overflow: hidden;
+			@include phablet{
+				height: 400px;
+			}
+			.protduct-details-figure-img{
+				width: 100%;
+				height: auto;
+				transition: all 0.2s ease-in-out;
+			}
+			ul{
+				position:absolute;
+				bottom: 20px;
+				right:20px;
+				.protduct-details-smallIMG{
+					cursor: pointer;
+					display: block;
+					width: 80px;
+					height: 80px;
+					background-color: $neu-06;
+					border:solid 1px $neu-04;
+					margin-top: 10px;
+					overflow: hidden;
+					@include phablet{
+						display: inline-block;
+						margin-left:10px;
+						width: 60px;
+						height:60px;	
+					}
+					@include mobile{
+
+					}
+					img{
+						height: 100%;
+						width: auto;
+					}
+				}
+			}
+		}
+		article{
+			text-align: center;
+			margin-top:50px;
+			padding-bottom: 100px;
+			h1{
+				@include text-1-l (bold, $neu-02,uppercase);
+				text-align: center;	
+			}
+			.product_number{
+				text-align: center;
+				margin-top:10px;
+				small{
+					@include text-1-s (0, $neu-04, 0);
+				}
+			}
+			.money{
+				text-align: center;
+				margin-top: 30px;
+				span{
+					@include text-2-s (0, $neu-03, uppercase, italic);	
+				}
+			}	
+			.product_description{
+				@include text-1-s (0, $neu-03, 0);
+				text-align: center;
+				max-width: 645px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			.protduct_sizes{
+				margin: 0 auto;
+				text-align: center;
+				margin-top: 30px;
+				span{
+					display: block;
+					@include text-1-s (0, $neu-03, uppercase);
+				}
+				.sizes{
+					margin-top: 20px;
+					display: inline-block;
+					padding: 10px;
+					font-size: 14px;
+					text-decoration: none;	
+					color: $neu-03;
+					border: 1px solid $neu-03;
+					font-family: 'lato';
+					margin-left:10px;
+					transition: 0.2s;
+					&:nth-of-type(1){
+						margin-left: 0px;
+					}
+					&:hover{
+						background-color: $neu-03;
+						color:$neu-07;
+					}
+				}
+			}
+			.btn{
+				@include btn(uppercase, $color-01 , $neu-07 ,$color-01, $button-size: l);
+				margin-top: 50px;
+				transition: 0.2s;
+				&:hover{
+					@include animation_btn ($neu-01, $neu-07, $neu-01)
+				}
+			}	
+		}
+	}
+}
+
+.imgShadow{
+-webkit-box-shadow: 0px 0px 10px 1px rgba(51, 126, 14, 1);
+-moz-box-shadow: 0px 0px 10px 1px rgba(51, 126, 14, 1);
+box-shadow: 0px 0px 10px 1px rgba(51, 126, 14, 1);
+}
